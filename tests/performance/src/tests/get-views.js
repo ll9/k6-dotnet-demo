@@ -13,7 +13,7 @@ export const options = {
 };
 
 export default function () {
-  const res = http.get(`${Config.BASE_URL}/views`);
+  const res = http.get(`${Config.BASE_URL}/views`, {tags: {testid: "get-views"}});
   check(res, {
     "status is 200": (r) => r.status === 200,
   });
